@@ -1,24 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+// @ts-expect-error plain JS module
+import App from "../App.js";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Divakar S — Full Stack Developer & Cybersecurity Enthusiast" },
+      { name: "description", content: "Portfolio of Divakar S: React, Node.js, Express, MySQL, MongoDB and network intrusion detection projects." },
+      { property: "og:title", content: "Divakar S — Full Stack Developer" },
+      { property: "og:description", content: "Full stack web apps and cybersecurity projects by Divakar S." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: App,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
