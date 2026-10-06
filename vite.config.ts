@@ -12,8 +12,8 @@ const jsxInJs = {
   name: "jsx-in-js",
   enforce: "pre" as const,
   async transform(code: string, id: string) {
-    if (!/\/src\/.*\.js$/.test(id.split("?")[0])) return null;
-    return transformWithOxc(code, id.split("?")[0], { lang: "jsx", jsx: { runtime: "automatic" } } as any);
+    if (!/\/src\/.*\.js$/.test(id.split("?")[0]!)) return null;
+    return transformWithOxc(code, id.split("?")[0]!, { lang: "jsx", jsx: { runtime: "automatic" } } as any);
   },
 };
 
