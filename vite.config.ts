@@ -5,7 +5,7 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { transformWithEsbuild } from "vite";
+import { transformWithOxc } from "vite";
 
 // Allow JSX inside plain .js files under src/ (portfolio components are .js).
 const jsxInJs = {
@@ -13,7 +13,7 @@ const jsxInJs = {
   enforce: "pre" as const,
   async transform(code: string, id: string) {
     if (!/\/src\/.*\.js$/.test(id.split("?")[0])) return null;
-    return transformWithEsbuild(code, id.split("?")[0], { loader: "jsx", jsx: "automatic" });
+    return transformWithOxc(code, id.split("?")[0], { lang: "jsx", jsx: { runtime: "automatic" } } as any);
   },
 };
 
@@ -25,6 +25,5 @@ export default defineConfig({
   },
   vite: {
     plugins: [jsxInJs],
-    optimizeDeps: { esbuildOptions: { loader: { ".js": "jsx" } } },
   },
 });
