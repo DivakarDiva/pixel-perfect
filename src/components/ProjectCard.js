@@ -23,8 +23,8 @@ export default function ProjectCard({ project, index }) {
         {p.tech.map((t) => <span key={t} className="badge">{t}</span>)}
       </div>
       <div className="project-links">
-        <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} source code`}><GithubIcon size={16} /> Code</a>
-        <a href={p.live} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} live demo`}>Live ↗</a>
+        {/* <a href={p.github} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} source code`}><GithubIcon size={16} /> Code</a>
+        <a href={p.live} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} live demo`}>Live ↗</a> */}
       </div>
     </article>
   );

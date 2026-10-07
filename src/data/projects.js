@@ -1,7 +1,7 @@
 // ✏️ Edit your projects here. Replace "#" links with your real URLs.
 export const projects = [
   {
-    title: "AI-Based Network Intrusion Detection System",
+    title: "Network Intrusion Detection System",
     tag: "Cybersecurity",
     accent: "cyan",
     featured: true,
