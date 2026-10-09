@@ -72,6 +72,10 @@ import { GithubIcon, LinkedinIcon } from "./Icons";
             </p>
 
             <div className="contact-links">
+                <a href="mailto:diva23072008@gmail.com" className="glass contact-link">
+                ✉ diva23072008@gmail.com
+                </a>
+
                 <a
                 href={links.linkedin}
                 target="_blank"
