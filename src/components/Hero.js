@@ -21,6 +21,8 @@ export default function Hero() {
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">View My Projects</a>
             <a href="#contact" className="btn btn-ghost">Contact Me</a>
+            {/* Place your resume at public/resume.pdf for this download to work */}
+            <a href="/resume.pdf" download="Divakar_S_Resume.pdf" className="btn btn-ghost">Download Resume</a>
           </div>
           <SocialLinks links={links} />
         </div>

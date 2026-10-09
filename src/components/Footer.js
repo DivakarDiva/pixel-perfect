@@ -8,6 +8,7 @@ export default function Footer() {
         <div>
           <strong>Divakar S</strong>
           <p>Full Stack Developer</p>
+          <p><a href="mailto:diva23072008@gmail.com">diva23072008@gmail.com</a></p>
         </div>
         <SocialLinks links={links} />
         <p className="copy">© {new Date().getFullYear()} Divakar S. All rights reserved.</p>
